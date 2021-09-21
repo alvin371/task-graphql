@@ -4,11 +4,14 @@ import PassengerInput from './PassengerInput';
 import ListPassenger from './ListPassenger';
 import Header from './Header';
 
+
 class Home extends Component {
+
+
     constructor(props) {
         super(props)
         this.state = {
-            data : [
+            data: [
                 {
                     id: uuidv4(),
                     nama: 'Yoga',
@@ -44,30 +47,30 @@ class Home extends Component {
     }
 
     hapusPengunjung = id => {
-        this.setState({    
-            data: [      
-                ...this.state.data.filter(item => {        
-                    return item.id !== id;      
-                })    
-            ]  
+        this.setState({
+            data: [
+                ...this.state.data.filter(item => {
+                    return item.id !== id;
+                })
+            ]
         });
     };
-    
+
     tambahPengunjung = newUser => {
         const newData = {
             id: uuidv4(),
             ...newUser
-        }; 
-        this.setState({    
-            data: [...this.state.data, newData]  
+        };
+        this.setState({
+            data: [...this.state.data, newData]
         });
     };
-    
+
     render() {
         return (
             <div>
-                <Header/>
-                <ListPassenger 
+                <Header />
+                <ListPassenger
                     data={this.state.data}
                     hapusPengunjung={this.hapusPengunjung}
                 />
