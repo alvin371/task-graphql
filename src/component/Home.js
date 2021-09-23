@@ -74,9 +74,6 @@ class Home extends Component {
                     data={this.state.data}
                     hapusPengunjung={this.hapusPengunjung}
                 />
-                <PassengerInput
-                    tambahPengunjung={this.tambahPengunjung}
-                />
             </div>
         )
     }
